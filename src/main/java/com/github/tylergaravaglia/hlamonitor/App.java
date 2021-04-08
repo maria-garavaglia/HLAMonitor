@@ -1,11 +1,13 @@
 package com.github.tylergaravaglia.hlamonitor;
 
+import com.github.tylergaravaglia.hlamonitor.parsers.RprFomParser;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -32,7 +34,11 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+
+        RprFomParser parser = new RprFomParser();
+        parser.parseFile(System.getProperty("user.dir") + File.separator + "RPR_FOM_v2.0_1.3.omt");
+
+        //launch();
     }
 
 }
